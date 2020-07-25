@@ -211,7 +211,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transform: translate(0, -20%);
+    transform: translate(0, -55%);
   }
   .card-footer a {
     text-align: center;
