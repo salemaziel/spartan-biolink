@@ -5,6 +5,9 @@ import Col from "react-bootstrap/Col";
 import Modal from "react-modal";
 import Container from "react-bootstrap/Container";
 
+import { 
+MdChat
+} from 'react-icons/md'
 
 import EstimateForm from "./estimateForm";
 
@@ -38,7 +41,7 @@ class HeroHeaderSection extends React.Component {
     return (
       <>
         <a onClick={this.handleModalOpen}>
-          Get A Quote
+          <MdChat color="#0D4D8D" size="1.5em"/> Get A Quote
         </a>
         <Modal
           isOpen={this.state.isModalOpen}

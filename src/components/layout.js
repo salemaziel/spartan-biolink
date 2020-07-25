@@ -8,7 +8,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { useStaticQuery, graphql } from "gatsby";
-import { Container } from "react-bootstrap";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './layout.css'
@@ -29,8 +28,8 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header siteTitle={data.site.siteMetadata.title} />
-      <main>
-        <Container className="p-3">{children}</Container>
+      <main >
+        {children}
       </main>
       <footer className="footer mt-auto py-3 bg-dark text-white text-center" style={{display: 'none'}}>
         © {new Date().getFullYear()}, Built with

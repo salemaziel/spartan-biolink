@@ -6,7 +6,6 @@ import Button from "react-bootstrap/Button";
 import { navigate } from "gatsby";
 
 import estimateformStyles from "./estimateform.module.css";
-import Container from "react-bootstrap/Container";
 
 ///const EstimateForm = (props) => (
 
@@ -24,7 +23,7 @@ export default function EstimateForm() {
   };
 
   const handleSubmit = e => {
-    e.preventDefault();
+    /*e.preventDefault();*/
     const form = e.target;
     fetch("/", {
       method: "POST",
@@ -37,18 +36,20 @@ export default function EstimateForm() {
       /*.then(() => navigate(form.getAttribute("action")))*/
       .then(() => alert("Sent Succesfully! We'll Respond As Soon As We Can"))
       .catch(error => alert(error));
+
+      e.preventDefault();
   };
 
   return (
     <>
       <div className={estimateformStyles.formBox}>
         <div className="item-heading">
-          <h3 className={estimateformStyles.title}>Get A Free Estimate</h3>
+          <h3 className={estimateformStyles.title}>Request An Estimate</h3>
         </div>
         <form
           name="EstimateForm"
           method="post"
-          action="/"
+          action="/thanks"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
         >
@@ -62,7 +63,7 @@ export default function EstimateForm() {
                 <Form.Control
                   required
                   type="text"
-                  placeholder="First name"
+                  placeholder="First Name"
                   onChange={handleChange}
                 />
               </Form.Group>
@@ -88,7 +89,7 @@ export default function EstimateForm() {
                 <Form.Control 
                 required 
                 type="text" 
-                placeholder="First name" 
+                placeholder="Last Name" 
                 onChange={handleChange}
                 />
               </Form.Group>
