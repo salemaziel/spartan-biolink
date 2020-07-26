@@ -53,11 +53,11 @@ export default function EstimateForm() {
 
           <Form.Row>
             <Col>
-              <Form.Group controlId="estimateFirstName">
-                <label htmlFor="firstname" style={{ display: "none" }}>
-                  FirstName
+              <Form.Group >
+              <label style={{ display: "none" }} htmlFor="firstname">
+                  First Name
                 </label>
-                <Form.Control
+                <input
                   type="text"
                   name="firstname"
                   id="firstname"
@@ -70,11 +70,11 @@ export default function EstimateForm() {
           </Form.Row>
           <Form.Row>
             <Col>
-              <Form.Group controlId="estimateLastName">
-                <label htmlFor="lastname" style={{ display: "none" }}>
-                  LastName
+              <Form.Group>
+              <label htmlFor="lastname" style={{ display: "none" }}>
+                  Last Name
                 </label>
-                <Form.Control
+                <input
                   type="text"
                   name="lastname"
                   id="lastname"
@@ -88,15 +88,15 @@ export default function EstimateForm() {
 
           <Form.Row>
             <Col>
-              <Form.Group controlId="estimateEmail">
-                <label htmlFor="email" style={{ display: "none" }}>
+              <Form.Group>
+              <label htmlFor="email" style={{ display: "none" }}>
                   Email
                 </label>
-                <Form.Control
-                  type="email"
+                <input
+                  type="text"
                   name="email"
                   id="email"
-                  placeholder="Email address"
+                  placeholder="Email"
                   required
                   onChange={handleChange}
                 />
@@ -105,12 +105,11 @@ export default function EstimateForm() {
           </Form.Row>
           <Form.Row>
             <Col>
-              <Form.Group controlId="estimatePhone">
-                <label htmlFor="tel" style={{ display: "none" }}>
+              <Form.Group>
+              <label htmlFor="tel" style={{ display: "none" }}>
                   Phone
                 </label>
-                <Form.Control
-                  required
+                <input
                   type="tel"
                   name="phone"
                   id="phone"
@@ -125,10 +124,10 @@ export default function EstimateForm() {
           <Form.Row>
             <Col>
               <Form.Group controlId="estimateZip">
-                <label htmlFor="zipcode" style={{ display: "none" }}>
-                  ZipCode
+              <label htmlFor="zipcode" style={{ display: "none" }}>
+                  Zip Code
                 </label>
-                <Form.Control
+                <input
                   type="text"
                   name="zipcode"
                   id="zipcode"
@@ -141,12 +140,13 @@ export default function EstimateForm() {
           </Form.Row>
           <Form.Row>
             <Col>
-              <Form.Group controlId="estimateJobDetails">
+              <Form.Group>
                 <label htmlFor="texarea" style={{ display: "none" }}>
                   Job Details
                 </label>
-                <Form.Control
+                <input
                   as="textarea"
+                  type="textarea"
                   rows="3"
                   name="jobdetails"
                   id="jobdetails"
