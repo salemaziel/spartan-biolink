@@ -42,14 +42,14 @@ export default function EstimateForm() {
           <h3 className={estimateformStyles.title}>Request An Estimate</h3>
         </div>
         <form
-          name="EstimateForm"
+          name="SpartanEstimates"
           method="post"
           action="/thanks"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
         >
           <input type="hidden" name="bot-field" />
-          <input type="hidden" name="form-name" value="EstimateForm" />
+          <input type="hidden" name="form-name" value="SpartanEstimates" />
 
           <Form.Row>
             <Col>
