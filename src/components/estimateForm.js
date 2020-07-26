@@ -7,8 +7,6 @@ import { navigate } from "gatsby";
 
 import estimateformStyles from "./estimateform.module.css";
 
-///const EstimateForm = (props) => (
-
 function encode(data) {
   return Object.keys(data)
     .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
@@ -23,7 +21,7 @@ export default function EstimateForm() {
   };
 
   const handleSubmit = e => {
-    /*e.preventDefault();*/
+    e.preventDefault();
     const form = e.target;
     fetch("/", {
       method: "POST",
@@ -33,11 +31,8 @@ export default function EstimateForm() {
         ...state,
       }),
     })
-      /*.then(() => navigate(form.getAttribute("action")))*/
-      .then(() => alert("Sent Succesfully! We'll Respond As Soon As We Can"))
+      .then(() => navigate(form.getAttribute("action")))
       .catch(error => alert(error));
-
-      e.preventDefault();
   };
 
   return (
@@ -59,11 +54,15 @@ export default function EstimateForm() {
           <Form.Row>
             <Col>
               <Form.Group controlId="estimateFirstName">
-                {/*<Form.Label>First name</Form.Label>*/}
+                <label htmlFor="firstname" style={{ display: "none" }}>
+                  FirstName
+                </label>
                 <Form.Control
-                  required
                   type="text"
+                  name="firstname"
+                  id="firstname"
                   placeholder="First Name"
+                  required
                   onChange={handleChange}
                 />
               </Form.Group>
@@ -71,26 +70,17 @@ export default function EstimateForm() {
           </Form.Row>
           <Form.Row>
             <Col>
-              {/*<Form.Group>
-                <label htmlFor="name" style={{ display: "none" }}>
-                  Last Name
+              <Form.Group controlId="estimateLastName">
+                <label htmlFor="lastname" style={{ display: "none" }}>
+                  LastName
                 </label>
-                <input
+                <Form.Control
                   type="text"
                   name="lastname"
                   id="lastname"
                   placeholder="Last Name"
                   required
-                  onClick={handleChange}
-                />
-              </Form.Group>*/}
-              <Form.Group controlId="estimateLastName">
-                {/*<Form.Label>First name</Form.Label>*/}
-                <Form.Control 
-                required 
-                type="text" 
-                placeholder="Last Name" 
-                onChange={handleChange}
+                  onChange={handleChange}
                 />
               </Form.Group>
             </Col>
@@ -99,77 +89,46 @@ export default function EstimateForm() {
           <Form.Row>
             <Col>
               <Form.Group controlId="estimateEmail">
-                {/*<Form.Label>Email address</Form.Label>*/}
-                <Form.Control 
-                type="email" 
-                placeholder="Email address" 
-                onChange={handleChange}
-                />
-              </Form.Group>
-            </Col>
-          </Form.Row>
-          <Form.Row>
-            <Col>
-
-              <Form.Group controlId="estimatePhone">
-                {/*<Form.Label>First name</Form.Label>*/}
-                <Form.Control 
-                required type="tel" 
-                placeholder="Phone" 
-                onChange={handleChange}
-                />
-              </Form.Group>
-            </Col>
-          </Form.Row>
-
-          <Form.Row>
-            {/* <Col>
-            <Form.Group>
-                  <label htmlFor="streetname" style={{display: 'none'}}>Street Address</label>
-                  <input
-                    type="text"
-                    name="streetname"
-                    id="streetname"
-                    placeholder="123 Your Street"
-                    required
-                    onChange={handleChange}
-                  />
-                </Form.Group>
-                </Col>
-            </Form.Row>
-            <Form.Row>
-              <Col>
-            <Form.Group>
-                  <label htmlFor="city" style={{display: 'none'}}>City</label>
-                  <input
-                    type="text"
-                    name="city"
-                    id="city"
-                    placeholder="City"
-                    required
-                    onChange={handleChange}
-                  />
-                </Form.Group>
-                </Col>
-                <Col xs={2}>
-            <Form.Group>
-                  <label htmlFor="state" style={{display: 'none'}}>State</label>
-                  <input
-                    type="text"
-                    name="state"
-                    id="state"
-                    value="CA"
-                    required
-                    onChange={handleChange}
-                  />
-                </Form.Group>
-                </Col>*/}
-            <Col>
-              {/*<Form.Group>
-                <label htmlFor="address" style={{ display: "none" }}>
-                  Zip Code
+                <label htmlFor="email" style={{ display: "none" }}>
+                  Email
                 </label>
-                <input
+                <Form.Control
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="Email address"
+                  required
+                  onChange={handleChange}
+                />
+              </Form.Group>
+            </Col>
+          </Form.Row>
+          <Form.Row>
+            <Col>
+              <Form.Group controlId="estimatePhone">
+                <label htmlFor="tel" style={{ display: "none" }}>
+                  Phone
+                </label>
+                <Form.Control
+                  required
+                  type="tel"
+                  name="phone"
+                  id="phone"
+                  placeholder="Phone"
+                  required
+                  onChange={handleChange}
+                />
+              </Form.Group>
+            </Col>
+          </Form.Row>
+
+          <Form.Row>
+            <Col>
+              <Form.Group controlId="estimateZip">
+                <label htmlFor="zipcode" style={{ display: "none" }}>
+                  ZipCode
+                </label>
+                <Form.Control
                   type="text"
                   name="zipcode"
                   id="zipcode"
@@ -177,27 +136,23 @@ export default function EstimateForm() {
                   required
                   onChange={handleChange}
                 />
-              </Form.Group>*/}
-              <Form.Group controlId="estimateZip">
-                {/*<Form.Label>First name</Form.Label>*/}
-                <Form.Control 
-                required type="text" 
-                placeholder="Zip Code" 
-                onChange={handleChange}
-                />
               </Form.Group>
             </Col>
           </Form.Row>
           <Form.Row>
             <Col>
-              <Form.Group controlId="exampleForm.ControlTextarea1">
-                {/*<Form.Label>Job Details</Form.Label>*/}
-                <Form.Control 
-                as="textarea" 
-                rows="3" 
-                placeholder="Job Details"
-                required
-                onChange={handleChange}
+              <Form.Group controlId="estimateJobDetails">
+                <label htmlFor="texarea" style={{ display: "none" }}>
+                  Job Details
+                </label>
+                <Form.Control
+                  as="textarea"
+                  rows="3"
+                  name="jobdetails"
+                  id="jobdetails"
+                  placeholder="Job Details"
+                  required
+                  onChange={handleChange}
                 />
               </Form.Group>
             </Col>
@@ -211,7 +166,7 @@ export default function EstimateForm() {
                   value="Send Message"
                   className="special"
                   className={estimateformStyles.estimateSubmit}
-                  onChange={handleSubmit}
+                  onClick={handleSubmit}
                 >
                   Submit{" "}
                 </Button>
