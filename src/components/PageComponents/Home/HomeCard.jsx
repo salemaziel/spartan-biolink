@@ -10,10 +10,8 @@ import LogoWords from "../../../images/logo-1-words.png";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { MdPhone } from "react-icons/md";
 import EstimateModal from "../../estimateModal";
-import Slide from "react-reveal/Slide";
 
 const HomeCard = () => (
-  <Slide left cascade>
     <Card className={homeStyles.CardStyle}>
       <Card.Img variant="top" src={Bg} className="front__bkg-photo" />
       <div className={homeStyles.LogoBox}>
@@ -51,7 +49,6 @@ const HomeCard = () => (
         <EstimateModal />
       </Card.Footer>
     </Card>
-  </Slide>
 );
 
 export default HomeCard;
