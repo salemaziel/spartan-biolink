@@ -1,49 +1,49 @@
 import React from "react";
 import homeStyles from "./home.module.css";
-import "./home.css";
 import Card from "react-bootstrap/Card";
 
-import Bg from "../../../images/kontact-link-bg.png";
-import Logo from "../../../images/logo-1-cropped.jpg";
-import LogoWords from "../../../images/logo-1-words.png";
+import {
+  Bg_jpg,
+  LogoHelmet1_jpg,
+  LogoWords1_png,
+} from '../../../images/index'
 
-import { FaMapMarkerAlt } from "react-icons/fa";
-import { MdPhone } from "react-icons/md";
+import { MdPhone, MdLocationOn } from "react-icons/md";
 import EstimateModal from "../../estimateModal";
 
 const HomeCard = () => (
     <Card className={homeStyles.CardStyle}>
-      <Card.Img variant="top" src={Bg} className="front__bkg-photo" />
+      <Card.Img variant="top" src={Bg_jpg} className={homeStyles.bannerPhoto} />
       <div className={homeStyles.LogoBox}>
-        <img src={Logo} className={homeStyles.Logo} />
+        <img src={LogoHelmet1_jpg} className={homeStyles.Logo} />
       </div>
       <Card.Body>
-        <div className="front__text">
-          <Card.Title className="front__text-header">
+        <div className={homeStyles.frontText}>
+          <Card.Title className={homeStyles.frontTextHeader}>
             <div className="w-100">
-              <img src={LogoWords} className={homeStyles.LogoWords} />
+              <img src={LogoWords1_png} className={homeStyles.LogoWords} />
             </div>
           </Card.Title>
           <Card.Text>
-            <p className="front__text-para">
-              <FaMapMarkerAlt />
+            <p className={homeStyles.frontTextLocation}>
+              <MdLocationOn />
               Southern California
             </p>
-            <p className="front__text-para-body">
+            <p className={homeStyles.frontTextBody}>
               Plumbing Maintenance, Plumbing Repairs, Water Heater
               Installations, Inspections, and More.
             </p>
-            <p className="front__text-para-body">
+            <p className={homeStyles.frontTextBody}>
               {" "}
               We Build Stronger Connections.
             </p>
-            <p className="front__text-para-body">Call Us Today.</p>
+            <p className={homeStyles.frontTextBody}>Call Us Today!</p>
           </Card.Text>
         </div>
       </Card.Body>
       <Card.Footer>
         <a href="tel:7604431434">
-          <MdPhone color="#0be40b" size="1.5em" /> Call Now
+          <MdPhone color="#0be40b" className={homeStyles.Icon} /> Call Now
         </a>
         <span className="divider" />
         <EstimateModal />

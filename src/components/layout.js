@@ -12,7 +12,6 @@ import { useStaticQuery, graphql } from "gatsby";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './layout.css'
 import Header from "./header";
-//import "./layout.scss";
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -31,10 +30,8 @@ const Layout = ({ children }) => {
       <main >
         {children}
       </main>
-      <footer className="footer mt-auto py-3 bg-dark text-white text-center" style={{display: 'none'}}>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.org">Gatsby</a>
+      <footer className="" style={{display: 'none'}}>
+
       </footer>
     </>
   );
