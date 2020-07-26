@@ -3,7 +3,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import HomeCard from './HomeCard'
-import Fade from "react-reveal/Fade";
+//import Fade from "react-reveal/Fade";
 
 
 
@@ -16,10 +16,10 @@ const HomePage = () => (
       <Row>
         <Col className="NoMobile"  xs={3} />
         <Col>
-        <Fade left ssrReveal>
+        {/*<Fade left ssrReveal>*/}
 
             <HomeCard />
-            </Fade>
+            {/*</Fade>*/}
 
         </Col>
         <Col className="NoMobile" xs={3}/>
