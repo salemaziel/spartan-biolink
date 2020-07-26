@@ -125,6 +125,12 @@ ul.actions {
 }
 
 @media screen and (max-width: 780px) {
+
+
+  #estimate {
+    max-width: 80%;
+}
+
   .NoDesktop {
     display: block;
   }
@@ -135,6 +141,24 @@ ul.actions {
 }
 
 @media screen and (max-width: 480px) {
+
+  #estimate {
+    max-width: 100%;
+    box-shadow: 5px 5px 15px 5px black;
+    background-color: white!important;
+    height: 65%;
+}
+
+ul.actions {
+    list-style: none!important;
+    padding-inline-start: 0;
+}
+
+.special {
+    list-style: none!important;
+}
+
+
   .NoDesktop {
     display: block;
   }
