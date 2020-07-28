@@ -42,7 +42,7 @@ const HomeCard = () => (
         </div>
       </Card.Body>
       <Card.Footer>
-        <a href="tel:7604431434">
+        <a href="tel:6194831212">
           <MdPhone color="#0be40b" className={homeStyles.Icon} /> Call Now
         </a>
         <span className="divider" />

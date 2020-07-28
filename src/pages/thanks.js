@@ -5,7 +5,9 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
+import EstimateForm from '../components/estimateForm'
 import { Link } from 'gatsby'
+
 
 import {
     FaArrowAltCircleLeft
@@ -33,6 +35,10 @@ const Thanks = () => (
                 Go Back
                 </Button>
             </Card.Body>
+            <div style={{display: 'none'}}>
+                <EstimateForm />
+
+            </div>
         </Card>
         </Col>
         </Row>

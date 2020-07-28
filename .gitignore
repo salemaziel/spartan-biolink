@@ -71,3 +71,9 @@ yarn-error.log
 .vscode*
 
 .history*
+
+public*
+
+.cache*
+
+.vscode/*
